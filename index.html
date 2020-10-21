@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+    
     <head>
 
         <title>StoneLegend - Staff Login</title>
@@ -46,7 +46,7 @@
             height: 70pt;
         }
 
-.disclaimer {
+        .disclaimer {
             font-size:20pt;
             margin: 10px;
             color: white;
@@ -63,7 +63,7 @@
             margin:10px;
             text-align: center;
             text-decoration:none;
-background-color: #00cc00;
+            background-color: #00cc00;
         }
 
         .image-center{
@@ -77,10 +77,6 @@ background-color: #00cc00;
         }
 
         a{text-decoration:none;}
-
-  background-color: #4CAF50;
-  color: white;
-}
 
 .button2 {
   background-color: white; 
@@ -136,7 +132,39 @@ background-color: #00cc00;
   margin-top: auto;
 }
 </style>
-</head>
+
+<script>
+
+	   function checkUsername() {
+           const a = document.getElementById('userBox');
+           var username = document.getElementById("usernameBox");
+           var usernameText = username.value;
+           if(usernameText == "Spactoking_Staff") {
+           a.href = 'profiles/spactopassword.html';
+	          return true;
+           } else if (usernameText == "Stone_Staff") {
+             a.href = 'profiles/stonepassword.html';
+             return true;
+           } else if (usernameText == "Legend_Staff") {
+             a.href = 'profiles/legendpassword.html';
+             return true;
+           } else if (usernameText == 'Quanta_Staff') {
+             a.href = 'profiles/quantapassword.html';
+             return true;
+           } else if (usernameText == 'Unknown_Staff') {
+             a.href = 'profiles/unknownpassword.html';
+             return true;
+           } else if (usernameText == 'Wizen_Staff') {
+             a.href = 'profiles/wizenpassword.html';
+             return true;
+           } else {
+           alert("Access denied! No such user exists!");
+           return false;
+           }
+}
+ </script>
+
+    </head>
 
     <body>
 
@@ -150,19 +178,12 @@ background-color: #00cc00;
             <p><b>This is for official staff of StoneLegend only and non-staff members should not try and break into the restricted areas.</b></p>
 
         </div>
-            <div class="body">
-                 <p>Please select your username:</p>     
-        </div>
-
-<div class="center">
-<a href="profiles/stonepassword.html"><button class="button button1">Stone</button></a>
-<a href="profiles/spactopassword.html"><button class="button button1">Spacto</button></a>
-<a href="profiles/legendpassword.html"><button class="button button1">Legend</button></a>
-<a href="profiles/wizenpassword.html"><button class="button button2">Wizen</button></a>
-<a href="profiles/unknownpassword.html"><button class="button button2">Unknown</button></a>
-</div>
-            
-
+                  <div class="body">
+                 <p>Please enter your username:</p>
+                <p>Username:<input id="usernameBox" type="username"/></p>
+                <a href="" id="userBox" onclick="return checkUsername();">
+                <img src="profiles/img/submit.png" width="100" height="50">
+               </a>
     </body>
 
 </html>
